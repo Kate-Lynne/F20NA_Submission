@@ -1,0 +1,250 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>EKK</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-blue.css">
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="main.css">
+
+
+<style>
+html, body, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
+h1 {color:blue;}
+/* input fields*/
+input[type= text], input[type= password]{
+	width: 100%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	display: inline-block;
+	border: 1px solid #ccc;
+	box-sizing: border-box;
+	}
+	
+/* button style */
+button{
+	background-color: #2976f2;
+	color: white;
+	padding: 14px 20px;
+	margin: 8px 0;
+	border: none;
+	cursor: pointer;
+	width: 100%:
+	}
+	
+button:hover {
+	opacity: 0.8;
+	}
+	
+/* Cancel button*/
+.cancelbtn{
+	width: auto;
+  	padding: 10px 18px;
+  	background-color: #f44336;
+	}
+	
+/* center image and close button*/
+.imgcontainer {
+ 	text-align: center;
+  	margin: 24px 0 12px 0;
+  	position: relative;
+	}
+img.logo {
+	width:40%;
+	border-radius: 50%;
+	}
+.container {
+  	padding: 16px;
+	}
+
+span.psw {
+  	float: right;
+  	padding-top: 16px;
+	}
+
+/* main screen*/
+.popup {
+	display: none;
+	position: fixed;
+	z-index: 1; /* Sit on top */
+  	left: 0;
+  	top: 0;
+  	width: 100%; 
+  	height: 100%; 
+  	overflow: auto; /* Enable scroll if needed */
+  	background-color: rgb(0,0,6);
+  	background-color: rgba(0,0,0,0.6); /* background when pop up is pressed*/
+  	padding-top: 60px;
+  	}
+  
+ /* content*/
+ .popup-content {
+ 	background-color : #e5f4f9;
+ 	margin: 5% auto 15% auto; /* from top 5% from bottom 15% */
+ 	border: 1px solid #888;
+ 	width: 90%; /*can change */
+ 	}
+ 
+ 
+ /* Close button*/
+ .close {
+  	position: absolute;
+  	right: 25px;
+  	top: 0;
+  	color: #000;
+  	font-size: 35px;
+  	font-weight: bold;
+	}
+
+.close:hover,
+.close:focus {
+  	color: red;
+  	cursor: pointer;
+	}
+	
+	
+/* ZOOM*/
+.animate {
+  	-webkit-animation: animatezoom 0.6s;
+  	animation: animatezoom 0.6s
+	}
+
+@-webkit-keyframes animatezoom {
+  	from {-webkit-transform: scale(0)} 
+  	to {-webkit-transform: scale(1)}
+	}
+  
+@keyframes animatezoom {
+  	from {transform: scale(0)} 
+  	to {transform: scale(1)}
+	}
+	
+/* extra small screen*/
+@media screen and (max-width: 300px){
+	span.psw {
+		display:block;
+		float: none;
+		}
+	.canclebtn{
+		width: 80%;
+		}
+	}
+/* password valid */
+.valid{
+	colour;green;
+}
+
+.valid:before{
+	position: relative;
+	left: -35px;
+	
+	
+}
+
+/* password not meeting requirements */
+.invalid{ 
+	colour:red;
+}
+
+.invalid:before{
+	position:relative;
+	left: -35px;
+	
+}
+
+
+</style>
+</head>
+<body class="w3-theme-light" onload="setTimeout(window.scrollTo(0,1),1);">
+	
+        <div class="w3-container">
+        <h2 > EkK Start Up Page</h2>
+        <img src="Logo.jpg.png" class="w3-circle" style="height:106px;width:106px" alt="Logo">
+    	</div>
+
+
+
+<!-- main body -->
+<button onclick="document.getElementById('idEKKLOGIN').style.display='block'" style ="width:auto;" >Login</button>
+<div id="idEKKLOGIN" class="popup">
+	<form class="popup-content animate" action="authenticationsafe.php">
+		<div class =" imgcontainer">
+			<span onclick="document.getElementById('idEKKLOGIN').style.display='none'" class="close" title="Close Popup">&times;</span>
+      		<img src="Logo.jpg.png" alt="Logo" class="logo">
+    	</div>
+    	<div class="container">
+    		<label for="uname"><b>Username or Email Address</b></label>
+    		<input type="text" placeholder="Enter Username or Email Address" name="uname" required>
+    		<label for="psw"><b>Password</b></label>
+      		<input type="password" placeholder="Enter Password" name="psw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z}]).{,12}" title="Must contain at least one number, a Uper and lowercase letter and be no more than 12 characters" required>
+      		
+      		<button type="submit">Login</button>
+      		<label><input type="checkbox" checked="checked" name="remember"> Remember me</label>
+    		<span class="psw"><a href="#">Forgot password?</a></span>
+    	</div>
+    	<div class = "container" style="background-color:#f1f1f1">
+    		<button type="button" onclick="document.getElementById('idEKKLOGIN').style.display='none'" class="cancelbtn">Cancel</button>
+    		<input type="button" onclick="location.href='https://www.google.com/';" value="Go to Google">
+         </div>
+     </form>
+ </div>
+ 
+<button onclick="document.getElementById('idEKKSIGNUP').style.display='block'" style ="width:auto;" >Sign Up</button>
+<div id="idEKKSIGNUP" class="popup">
+	<form class="popup-content animate" action="newusersafe.php">
+		<div class ="imgcontainer">
+			<span onclick="document.getElementById('idEKKSIGNUP').style.display='none'" class="close" title="Close Popup">&times;</span>
+      		<img src="Logo.jpg.png" alt="Logo" class="logo">
+    	</div>
+    	<div class="container">
+    		<label for=""><b>First Name</b></label>
+    		<input type="text" placeholder="Enter First Name" name="fname" required>
+    		<label for=""><b>Last Name</b></label>
+    		<input type="text" placeholder="Enter Last Name" name="lname" required>
+    		<label for=""><b>Username or Email Address</b></label>
+    		<input type="text" placeholder="Enter Username or Email Address" name="uname" required>
+    		<label for=""><b>Job</b></label>
+    		<input type="text" placeholder="Enter Job" name="job" required>
+    		<label for=""><b>Country of Residence</b></label>
+    		<input type="text" placeholder="Enter Country of Residence" name="country" required>
+    		<label for=""><b>Date of Birth</b></label>
+    		<input type="text" placeholder="Enter Date of Birth" name="dob" required>
+    		<label for="psw"><b>Set Password</b></label>
+      		<input type="password" placeholder="Enter Password" id="psw" name="psw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z}]).{,12}" title="Must contain at least one number, a Uper and lowercase letter and be no more than 12 characters" required>
+      		
+      		<button type="submit" class="signup" >Sign Up</button>	
+    	</div>
+    	<div class = "container" style="background-color:#f1f1f1">
+    		<button type="button" onclick="document.getElementById('idEKKSIGNUP').style.display='none'" class="cancelbtn">Cancel</button>
+    		<input type="button" onclick="location.href='https://www.google.com/';" value="Google">
+         </div>
+         <div id="message">
+         	<h3> Password has to contain the following:</h3>
+         	<p id="capital" class="valid">An Upper Case Letter</p>
+         	<p id="letter" class="valid"> A Lower Case Letter</p>
+         	<p id="number" class="valid">A Number</p>
+         	<p id="length" class="valid">Maximum Of 12 Characters</p>
+         	</div>
+     </form>
+ </div>
+ 
+ <script>
+ // get the popup 
+ var popup = document.getElementById('idEKKLOGIN');
+ var popup = document.getElementById('idEKKSIGNUP');
+ 
+ //close popup if user clicks outside
+ window.onclick = function(event){
+	 if (event.target == popup){
+		 popup.style.display = "none";
+
+	 }
+ }
+ </script>
+ </body>
+ </html>
+        
+         
